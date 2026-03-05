@@ -119,15 +119,13 @@ const connectDB = async () => {
       console.log(`📍 Connection String: ${MONGODB_URI.replace(/:[^:]*@/, ':****@')}`); // Hide password
 
       await mongoose.connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        serverSelectionTimeoutMS: 8000, // 8 seconds
-        socketTimeoutMS: 45000,
-        maxPoolSize: 10,
-        minPoolSize: 2,
-        retryWrites: true,
-        retryReads: true,
-        appName: 'GN-SONS-Backend',
+        serverSelectionTimeoutMS: 10000, // 10 seconds for server selection
+        socketTimeoutMS: 45000, // 45 seconds for socket timeout
+        maxPoolSize: 10, // Maximum connection pool size
+        minPoolSize: 2, // Minimum connection pool size
+        retryWrites: true, // Automatic write retries
+        retryReads: true, // Automatic read retries
+        appName: 'GN-SONS-Backend', // Application name in connection
         family: 4 // Force IPv4 (helps with VPN/network issues)
       });
 

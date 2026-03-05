@@ -26,8 +26,13 @@
 // Production-ready luxury e-commerce backend
 // All data flows through APIs only - Secure architecture
 
-// DNS Configuration for MongoDB connectivity
-require('dns').setServers(['8.8.8.8','8.8.4.4']);
+// Suppress punycode deprecation warning (known Node.js issue)
+process.removeAllListeners('warning');
+
+// DNS Configuration for MongoDB connectivity (optimized for reliability)
+const dns = require('dns');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
+dns.setDefaultResultOrder('ipv4first');
 
 const express = require('express');
 const cors = require('cors');
