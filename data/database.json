@@ -1,0 +1,31 @@
+{
+  "products": [
+  
+
+   
+  
+  
+  ],
+  "users": [
+    {
+      "id": "user-001",
+      "name": "Admin User",
+      "email": "admin@gnsons.com",
+      "password": "$2a$10$hashedPasswordHere",
+      "role": "admin",
+      "createdAt": "2026-01-27T04:48:59.753Z"
+    },
+    {
+      "id": "user-002",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "$2a$10$hashedPasswordHere",
+      "role": "customer",
+      "createdAt": "2026-01-27T04:48:59.753Z"
+    }
+  ],
+  "orders": [],
+  "carts": [],
+  "messages": [],
+  "reviews": []
+}
