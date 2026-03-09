@@ -89,15 +89,16 @@ app.use(helmet({
 
 // CORS - Allow frontend and admin panel
 const corsOptions = {
-  origin: [
-    'http://localhost:3000',  // Frontend
-    'http://localhost:3001',  // Admin Panel
-    'http://localhost:3002',  // Admin Panel (alternate)
-    'http://localhost:3003',  // Frontend (alternate)
-    'http://localhost:3004',  // Admin Panel (current)
-    'http://localhost:5173',  // Vite dev server frontend
-    'http://localhost:5174'   // Vite dev server admin
-  ],
+  origin: '*',
+  // origin: [
+  //   'http://localhost:3000',  // Frontend
+  //   'http://localhost:3001',  // Admin Panel
+  //   'http://localhost:3002',  // Admin Panel (alternate)
+  //   'http://localhost:3003',  // Frontend (alternate)
+  //   'http://localhost:3004',  // Admin Panel (current)
+  //   'http://localhost:5173',  // Vite dev server frontend
+  //   'http://localhost:5174'   // Vite dev server admin
+  // ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization']
